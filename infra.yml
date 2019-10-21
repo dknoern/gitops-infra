@@ -233,7 +233,7 @@ Resources:
     Type: AWS::ECS::TaskDefinition
     Properties:
       Family: !Join ['-', [!Ref 'AWS::StackName', 'backend']]
-      Cpu: 1024
+      Cpu: 512
       Memory: 1024
       NetworkMode: awsvpc
       RequiresCompatibilities:
@@ -242,7 +242,7 @@ Resources:
         !GetAtt 'ECSTaskExecutionRole.Arn'
       ContainerDefinitions:
         - Name: backend
-          Cpu: 1024
+          Cpu: 512
           Memory: 1024
           Image: !Join [':', ['484951121041.dkr.ecr.us-west-2.amazonaws.com/gitops-api', !Ref 'ImageVersion']]
           PortMappings:
@@ -313,7 +313,7 @@ Resources:
     Type: AWS::ECS::TaskDefinition
     Properties:
       Family: !Join ['-', [!Ref 'AWS::StackName', 'frontend']]
-      Cpu: 1024
+      Cpu: 512
       Memory: 1024
       NetworkMode: awsvpc
       RequiresCompatibilities:
@@ -322,7 +322,7 @@ Resources:
           !GetAtt 'ECSTaskExecutionRole.Arn'
       ContainerDefinitions:
         - Name: frontend
-          Cpu: 1024
+          Cpu: 512
           Memory: 1024
           Image: !Join [':', ['484951121041.dkr.ecr.us-west-2.amazonaws.com/gitops-ui', !Ref 'ImageVersion']]
           PortMappings:
