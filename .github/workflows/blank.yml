@@ -1,9 +1,10 @@
 name: AWS Stack Update
-on: [push]
+on:
+  push:
+    branches:
+    - master
 jobs:
   build:
-    branches:
-      - master
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
