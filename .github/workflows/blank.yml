@@ -20,4 +20,4 @@ jobs:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       with:
-        args: cloudformation deploy --stack-name gitops6 --region us-west-2 --capabilities CAPABILITY_IAM --template-body infra.yml --notification-arns "arn:aws:sns:us-west-2:484951121041:deployment" --no-fail-on-empty-changeset
+        args: cloudformation deploy --stack-name gitops6 --region us-west-2 --capabilities CAPABILITY_IAM --template-file infra.yml --notification-arns "arn:aws:sns:us-west-2:484951121041:deployment" --no-fail-on-empty-changeset
